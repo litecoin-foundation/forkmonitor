@@ -1,15 +1,15 @@
 [Unit]
-Description=Bitcoin daemon
+Description=Litecoin daemon
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/bitcoind -daemon -pid=/run/bitcoind/bitcoind.pid
+ExecStart=/usr/local/bin/litecoind -daemon -pid=/run/litecoind/litecoind.pid
 
-# Creates /run/bitcoind owned by bitcoin
-RuntimeDirectory=bitcoind
-User=bitcoin
+# Creates /run/litecoind owned by litecoin
+RuntimeDirectory=litecoind
+User=litecoin
 Type=forking
-PIDFile=/run/bitcoind/bitcoind.pid
+PIDFile=/run/litecoind/litecoind.pid
 Restart=on-failure
 
 StartLimitInterval=10
