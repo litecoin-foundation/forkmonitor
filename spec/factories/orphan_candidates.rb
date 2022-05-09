@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :stale_candidate do
-    height { 500_000 }
+    height { 2_000_000 }
   end
 end

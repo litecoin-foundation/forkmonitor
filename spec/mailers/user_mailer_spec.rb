@@ -66,11 +66,11 @@ RSpec.describe UserMailer, type: :mailer do
   describe 'stale candidate notify' do
     let(:user) { create(:user) }
     let(:mail) { described_class.with(user: user, stale_candidate: stale_candidate).stale_candidate_email }
-    let(:stale_candidate) { create(:stale_candidate, coin: :btc, height: 500_000) }
+    let(:stale_candidate) { create(:stale_candidate, coin: :btc, height: 2_000_000) }
 
     before do
-      @block_1 = create(:block, height: 500_000)
-      @block_2 = create(:block, height: 500_000)
+      @block_1 = create(:block, height: 2_000_000)
+      @block_2 = create(:block, height: 2_000_000)
     end
 
     it 'renders the headers' do

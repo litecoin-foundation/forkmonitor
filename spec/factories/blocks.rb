@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :block do
     sequence(:block_hash) { |n| n.to_s(16).rjust(32, '0') }
-    sequence(:height) { |n| 500_000 + n }
+    sequence(:height) { |n| 2_000_000 + n }
     sequence(:timestamp) { |n| 1_500_000_000 + 60 * 10 * n }
     sequence(:work) { |n| n.to_s(16).rjust(32, '0') }
     coin { :btc }

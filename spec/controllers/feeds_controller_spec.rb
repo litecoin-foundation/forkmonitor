@@ -108,10 +108,10 @@ RSpec.describe FeedsController, type: :controller do
     end
 
     describe 'GET stale_candidates feed' do
-      let!(:block_1) { create(:block, coin: :btc, height: 500_000) }
+      let!(:block_1) { create(:block, coin: :btc, height: 2_000_000) }
 
       before do
-        create(:stale_candidate, coin: :btc, height: 500_000)
+        create(:stale_candidate, coin: :btc, height: 2_000_000)
       end
 
       it 'is rendered' do
