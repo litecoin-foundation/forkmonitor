@@ -613,8 +613,9 @@ class Node < ApplicationRecord
 
       loop do
         options[:coins].each do |coin|
-          LightningTransaction.check!({ coin: coin.downcase.to_sym, max: 1000 }) if coin == 'BTC'
-          LightningTransaction.check_public_channels! if coin == 'BTC'
+#          Disable lightning checks until fix         
+#          LightningTransaction.check!({ coin: coin.downcase.to_sym, max: 1000 }) if coin == 'BTC'
+#          LightningTransaction.check_public_channels! if coin == 'BTC'
           Block.match_missing_pools!(coin.downcase.to_sym, 3)
           Block.process_templates!(coin.downcase.to_sym)
           StaleCandidate.process!(coin.downcase.to_sym)

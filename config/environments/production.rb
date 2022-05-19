@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+  # Host domain URL configuration
+  config.hosts << 'fork.litecoin.org'
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
@@ -57,8 +60,9 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
-  config.ssl_options = { redirect: { exclude: ->(request) { request.domain == ENV['ONION_DOMAIN'] } } }
+  # disabled due to cloudflare proxy
+  config.force_ssl = false
+  # config.ssl_options = { redirect: { exclude: ->(request) { request.domain == ENV['ONION_DOMAIN'] } } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
