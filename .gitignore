@@ -42,3 +42,6 @@ yarn-debug.log*
 .env
 
 /vendor/bitcoin-*
+
+# disable env variables
+.rbenv-vars
